@@ -7,8 +7,17 @@ body {
 }
 
 .terminal-cursor::after {
-  content: '_';
-  @apply animate-cursor-blink;
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.scale-102 {
+  transform: scale(1.02);
 }
 
 .matrix-bg {
@@ -19,7 +28,7 @@ body {
 
 .gradient-border {
   position: relative;
-  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 157, 0.2);
 }
 
 .gradient-border::before {
